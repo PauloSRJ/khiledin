@@ -3,7 +3,6 @@ const compression = require('compression');
 const server = require('http');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const minify = require('express-minify');
 const session = require('express-session');
 let MongoStore = require('connect-mongo');
@@ -38,14 +37,11 @@ global.App = class App {
 
     this.httpServer = this.httpServer();
 
-    // insere sessao no mongodb
-    MongoStore = MongoStore(session);
-
     const sessionInit = session({
       secret: 'keyboard cat',
       resave: false,
-      store: new MongoStore({
-        mongooseConnection: db.connection
+      store: MongoStore.create({
+        mongoUrl: process.env.MONGO_URL
       }),
       saveUninitialized: true,
       cookie: {
@@ -72,10 +68,10 @@ global.App = class App {
       fileUpload(),
       compression(),
       minify(),
-      bodyParser.urlencoded({
+      express.urlencoded({
         extended: false
       }),
-      bodyParser.json(),
+      express.json(),
       ['/', express.static(__dirname + '/public')]
     );
 

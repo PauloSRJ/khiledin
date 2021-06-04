@@ -3,6 +3,8 @@ node_modules/
 /dist/
 /app-desktop/
 /app/public/src/uploads/(imagem|arquivo|audio|video)/*
+/nest-test/node_modules/
+/nest-test/dist/
 
 npm-debug.log*
 yarn-debug.log*

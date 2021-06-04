@@ -4,7 +4,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const concat = require('gulp-concat');
 const minifyCSS = require('gulp-csso');
 const imagemin = require('gulp-imagemin');
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 /*const streamqueue  = require('streamqueue');
 const uglify = require('gulp-uglify-es').default;*/
 

@@ -17,13 +17,13 @@
    <meta name="msapplication-starturl" content="/">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <!-- / Init App -->
-	<link rel="shootcut icon" href="<%- url -%>/src/images/icon.png">
-	<link rel="stylesheet" href="<%- url -%>/src/css/min/painel.css">
-	<link rel="stylesheet" href="<%- url -%>/src/css/min/emojione.css">
+	<link rel="shootcut icon" href="<%= url %>/src/images/icon.png">
+	<link rel="stylesheet" href="<%= url %>/src/css/min/painel.css">
+	<link rel="stylesheet" href="<%= url %>/src/css/min/emojione.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto" rel="stylesheet">
-	<link rel="stylesheet" href="<%- url -%>/src/css/min/menu.css">
-	<link rel="stylesheet" href="<%- url -%>/src/css/min/mobile.css">
-	<link rel="stylesheet" type="text/css" href="<%- url -%>/src/css/min/spinner.css">
+	<link rel="stylesheet" href="<%= url %>/src/css/min/menu.css">
+	<link rel="stylesheet" href="<%= url %>/src/css/min/mobile.css">
+	<link rel="stylesheet" type="text/css" href="<%= url %>/src/css/min/spinner.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <style>
@@ -39,25 +39,25 @@
 	</div>
 
 	<div class="container" id="app">
-		  <% include includes/timeline.ejs %>
-		  <% include includes/menu.ejs %>
+		  <%- include('includes/timeline') %>
+		  <%- include('includes/menu') %>
 	</div>
 
-	<script src="<%- url -%>/socket.io/socket.io.js"></script>
-	<script src="<%- url -%>/src/js/min/emojione.js"></script>
-	<script src="<%- url -%>/src/js/min/clipboard.js"></script>
-	<script src="<%- url -%>/src/js/min/jquery.js"></script>
-	<script src="<%- url -%>/src/js/min/electron.js"></script>
-	<script src="<%- url -%>/src/js/min/chat.js"></script>
+	<script src="<%= url %>/socket.io/socket.io.js"></script>
+	<script src="<%= url %>/src/js/min/emojione.js"></script>
+	<script src="<%= url %>/src/js/min/clipboard.js"></script>
+	<script src="<%= url %>/src/js/min/jquery.js"></script>
+	<script src="<%= url %>/src/js/min/electron.js"></script>
+	<script src="<%= url %>/src/js/min/chat.js"></script>
 	<script>
 
 		const socket = io();
-		const user = <%- user -%>;
+		const user = <%-user%>;
 		// Template
 		const chat = {
-			'url': "<%- url -%>/",
-			'sala_origin': '<%- sala -%>',
-			'sala': "sala-<%- sala -%>-",
+			'url': "<%= url %>/",
+			'sala_origin': '<%= sala %>',
+			'sala': "sala-<%= sala %>-",
 			'peoples': 1,
 			'messages': 0,
 			'peoples_add': ['Junior Bot'],
@@ -88,8 +88,8 @@
 
 	</script>
 
-  <script src="<%- url -%>/src/js/vue.js"></script>
-	<script src="<%- url -%>/src/js/min/app.js?version=<%- Math.floor(Math.random() * 100000) -%>"></script>
+  <script src="<%= url %>/src/js/vue.js"></script>
+	<script src="<%= url %>/src/js/min/app.js?version=<%= Math.floor(Math.random() * 100000) %>"></script>
 
 </body>
 </html>

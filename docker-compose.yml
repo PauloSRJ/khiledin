@@ -5,13 +5,15 @@ services:
     ports:
         - "3000:3000"
     environment:
-        - MONGO_URL='mongodb://mongo:27017/admin'
-        - URL='https://3000-dot-6910560-dot-devshell.appspot.com'
+        - MONGO_URL=mongodb://mongo:27017/admin
+        - URL=http://localhost:3000
     volumes:
         - .:/usr/app
     depends_on:
         - mongo
   mongo:
     image: mongo
+    logging:
+        driver: none
     ports:
     - "27017:27017"
